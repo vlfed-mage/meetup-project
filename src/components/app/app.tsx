@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
 import './app.css';
 
 import { AllMeetups, Favorites, NewMeetups } from '../pages';
 
-function App() {
+const App: FC = () => {
     return useRoutes([
         {
             path: '/',
@@ -23,6 +24,6 @@ function App() {
             element: <Navigate to='/' />,
         },
     ]);
-}
+};
 
 export default App;
