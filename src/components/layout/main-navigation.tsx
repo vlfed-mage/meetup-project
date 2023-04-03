@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import classes from '../../styles/main-navigation.module.css';
 
-const MainNavigation: FC = () => {
+const MainNavigation = () => {
     return (
         <header className={classes.header}>
             <div className={classes.logo}>Meetups</div>

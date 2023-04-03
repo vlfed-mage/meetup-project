@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import classes from '../../styles/meetup-item.module.css';
 import { Meetup } from './meetup-list';
 
 import Card from '../ui/card';
 
-const MeetupItem: FC<Meetup> = props => {
+const MeetupItem = (props: Meetup) => {
     return (
         <li className={classes.item}>
             <Card>

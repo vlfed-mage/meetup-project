@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import classes from '../../styles/layout.module.css';
 
@@ -8,7 +8,7 @@ interface LayoutProps {
     children: ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
     return (
         <div>
             <MainNavigation />
