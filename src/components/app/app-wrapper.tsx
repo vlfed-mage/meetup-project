@@ -1,13 +1,14 @@
 import React from 'react';
 
 import App from './app';
-import MainNavigation from '../layout/main-navigation';
+import Layout from '../layout/layout';
 
 const AppWrapper = () => {
     return (
         <div className='container'>
-            <MainNavigation />
-            <App />
+            <Layout>
+                <App />
+            </Layout>
         </div>
     );
 };
