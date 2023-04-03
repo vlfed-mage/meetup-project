@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import classes from '../../styles/meetup-list.module.css';
 import MeetupItem from './meetup-item';
@@ -15,7 +15,7 @@ interface Meetups {
     meetups: Meetup[];
 }
 
-const MeetupList: FC<Meetups> = props => {
+const MeetupList = (props: Meetups) => {
     return (
         <ul className={classes.list}>
             {props.meetups.map(meetup => (

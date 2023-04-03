@@ -1,12 +1,11 @@
-import { FC } from 'react';
-import { Navigate, useRoutes } from 'react-router-dom';
+import { Navigate, useRoutes, RouteObject } from 'react-router-dom';
 
 import './app.css';
 
 import { AllMeetups, Favorites, NewMeetups } from '../pages';
 
-const App: FC = () => {
-    return useRoutes([
+const App = () => {
+    const routes: RouteObject[] = [
         {
             path: '/',
             element: <AllMeetups />,
@@ -23,7 +22,9 @@ const App: FC = () => {
             path: '*',
             element: <Navigate to='/' />,
         },
-    ]);
+    ];
+
+    return useRoutes(routes);
 };
 
 export default App;

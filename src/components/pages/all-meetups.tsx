@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import MOCK_DATA from '../../data';
 import MeetupList from '../meetups/meetup-list';
 
-const AllMeetups: FC = () => {
+const AllMeetups = () => {
     return (
         <section>
             <h1>All Meetups</h1>

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import App from './app';
 import Layout from '../layout/layout';
 
-const AppWrapper: FC = () => {
+const AppWrapper = () => {
     return (
         <div className='container'>
             <Layout>
