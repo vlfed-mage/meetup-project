@@ -8,7 +8,7 @@ export interface Meetup {
     title: string;
     image: string;
     address: string;
-    description: string;
+    description: string[];
 }
 
 interface Meetups {

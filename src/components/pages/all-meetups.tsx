@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MOCK_DATA from '../../data';
-import MeetupList from '../meetups/meetup-list';
+import { MeetupList } from '../meetups';
 
 const AllMeetups = () => {
     return (
