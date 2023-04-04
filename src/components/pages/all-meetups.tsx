@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-import { MeetupList } from '../meetups';
 import axios from 'axios';
 
+import { MeetupList } from '../meetups';
+
 export interface Meetup {
-    id: string | number;
+    id: string;
     title: string;
     image: string;
     address: string;
