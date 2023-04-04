@@ -5,6 +5,7 @@ import './index.css';
 
 import AppWrapper from './components/app';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { FavoritesContextProvider } from './store/favorites-context';
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
@@ -15,8 +16,10 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
     <StrictMode>
-        <Router>
-            <AppWrapper />
-        </Router>
+        <FavoritesContextProvider>
+            <Router>
+                <AppWrapper />
+            </Router>
+        </FavoritesContextProvider>
     </StrictMode>
 );
