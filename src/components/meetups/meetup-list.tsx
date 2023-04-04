@@ -1,24 +1,18 @@
 import React from 'react';
 
 import classes from '../../styles/meetup-list.module.css';
-import MeetupItem from './meetup-item';
+import { Meetup } from '../pages/all-meetups';
 
-export interface Meetup {
-    id: string | number;
-    title: string;
-    image: string;
-    address: string;
-    description: string[];
-}
+import MeetupItem from './meetup-item';
 
 interface Meetups {
     meetups: Meetup[];
 }
 
-const MeetupList = (props: Meetups) => {
+const MeetupList = ({ meetups }: Meetups) => {
     return (
         <ul className={classes.list}>
-            {props.meetups.map(meetup => (
+            {meetups?.map(meetup => (
                 <MeetupItem key={meetup.id} {...meetup} />
             ))}
         </ul>

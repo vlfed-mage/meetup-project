@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from '../../styles/meetup-item.module.css';
-import { Meetup } from './meetup-list';
+import { Meetup } from '../pages/all-meetups';
 
 import Card from '../ui/card';
 
