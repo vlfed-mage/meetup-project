@@ -1,12 +1,30 @@
 import React from 'react';
 
 import classes from '../../styles/meetup-item.module.css';
+import { useFavorites } from '../hooks';
+
 import { Meetup } from '../pages/all-meetups';
 
 import Card from '../ui/card';
 
 const MeetupItem = (props: Meetup) => {
-    const { image, address, title, description } = props;
+    const { id, image, address, title, description } = props;
+    const { addFavorite, removeFavorite, itemIsFavorite } = useFavorites();
+
+    const toggleFavoriteStatusHandler = () => {
+        if (itemIsFavorite(id)) {
+            removeFavorite(id);
+        } else {
+            addFavorite({
+                id,
+                image,
+                address,
+                title,
+                description,
+            });
+        }
+    };
+
     return (
         <li className={classes.item}>
             <Card>
@@ -23,7 +41,9 @@ const MeetupItem = (props: Meetup) => {
                     </div>
                 </div>
                 <div className={classes.actions}>
-                    <button>To favorites</button>
+                    <button onClick={toggleFavoriteStatusHandler}>
+                        {itemIsFavorite(id) ? 'Remove from favorites' : 'To favorites'}
+                    </button>
                 </div>
             </Card>
         </li>

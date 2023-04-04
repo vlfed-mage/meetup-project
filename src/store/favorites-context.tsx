@@ -7,16 +7,19 @@ interface FavoritesContextData {
     total: number;
     addFavorite: (favoriteMeetup: Meetup) => void;
     removeFavorite: (meetupId: string) => void;
-    itemIsFavorite: (meetupId: string) => Boolean;
+    itemIsFavorite: (meetupId: string) => boolean;
 }
 
 interface FavoritesContextProviderProps {
     children: ReactNode;
 }
 
-const FavoritesContext = createContext<Pick<FavoritesContextData, 'favorites' | 'total'>>({
+const FavoritesContext = createContext<FavoritesContextData>({
     favorites: [],
     total: 0,
+    addFavorite: favoriteMeetup => {},
+    removeFavorite: meetupId => {},
+    itemIsFavorite: meetupId => false,
 });
 
 export const FavoritesContextProvider = ({ children }: FavoritesContextProviderProps) => {
@@ -24,8 +27,7 @@ export const FavoritesContextProvider = ({ children }: FavoritesContextProviderP
 
     const addFavoriteHandler = (favoriteMeetup: Meetup): void => {
         setUserFavorites(prevUserFavorites => {
-            console.log(favoriteMeetup, prevUserFavorites);
-            return prevUserFavorites.concat(favoriteMeetup);
+            return [...prevUserFavorites, favoriteMeetup];
         });
     };
 
@@ -35,7 +37,7 @@ export const FavoritesContextProvider = ({ children }: FavoritesContextProviderP
         });
     };
 
-    const itemIsFavoriteHandler = (meetupId: string): Boolean => {
+    const itemIsFavoriteHandler = (meetupId: string): boolean => {
         return userFavorites.some(meetup => meetup.id === meetupId);
     };
 

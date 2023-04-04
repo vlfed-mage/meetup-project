@@ -10,12 +10,14 @@ interface Meetups {
 }
 
 const MeetupList = ({ meetups }: Meetups) => {
-    return (
+    return meetups.length ? (
         <ul className={classes.list}>
             {meetups?.map(meetup => (
                 <MeetupItem key={meetup.id} {...meetup} />
             ))}
         </ul>
+    ) : (
+        <p>There is no content yet</p>
     );
 };
 
